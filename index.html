@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Estate Full Page</title>
+    <link rel="icon" type="image/png" href="logo.jpg">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Space+Grotesk&display=swap" rel="stylesheet"> -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Space Grotesk' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+        integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+        integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            overflow-x: clip !important;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .navbar {
+            background: transparent !important;
+            transition: 0.4s;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            height: 100px;
+        }
+
+        .navbar.scrolled {
+            background: #fff !important;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-link {
+            color: #fff !important;
+            font-weight: 700;
+            font-size: 20px;
+            margin: 0 20px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        /* .poi 
+        {
+            margin-left: 200px;
+        }
+         */
+        .navbar.scrolled .nav-link {
+            color: #333 !important;
+        }
+
+        .nav-link:hover {
+            color: #ffce5a !important;
+            background: rgba(55, 53, 50, 0.108);
+        }
+
+        .dropdown-menu {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            /* margin-right: 100px; */
+        }
+
+        .dropdown-item {
+            color: #333;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+            color: #ff5a5f;
+        }
+
+        .add-listing-btn {
+            background-color: #ff5a5f;
+            color: #fff !important;
+            padding: 10px 30px;
+            border-radius: 50px;
+            margin-left: 20px;
+            font-size: 18px;
+            transition: 0.3s;
+            cursor: pointer;
+            margin-left: auto;
+        }
+
+        .add-listing-btn:hover {
+            background-color: #e14d50;
+        }
+
+        .profile-img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+
+        .profile-status {
+            width: 10px;
+            height: 10px;
+            background: #28a745;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border: 2px solid #fff;
+        }
+
+        .profile-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-left: 200px;
+            margin-right: 10px;
+        }
+
+        .navbar-brand img {
+            height: 90px;
+        }
+
+        .hero-section {
+            background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* position: relative; */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .hero-section h1 {
+            font-size: 50px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .search-tabs {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            z-index: 5;
+            padding: 20px;
+            margin-top: 500px;
+        }
+
+        .nav-pills .nav-link {
+            color: #333;
+            background: #e14d50;
+            margin-right: 10px;
+            border-radius: 50px;
+            font-size: 16px;
+            padding: 10px 25px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-pills .nav-link.active {
+            background: #ff5a5f;
+            color: #fff;
+        }
+
+        .form-control,
+        .form-select {
+            border-radius: 30px;
+            padding: 10px 20px;
+            margin-bottom: 15px;
+        }
+
+        .btn-search {
+            background: #ff5a5f;
+            color: #fff;
+            border-radius: 30px;
+            padding: 10px 30px;
+            border: none;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-search:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .popular-places,
+        .featured-properties {
+            padding: 80px 0;
+            background: #fff;
+            color: #333;
+            text-align: center;
+            /* cursor: pointer; */
+        }
+
+        .popular-places h2,
+        .featured-properties h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .popular-places p,
+        .featured-properties p {
+            font-size: 16px;
+            margin-bottom: 40px;
+            color: #777;
+        }
+
+        .place-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.15);
+            display: flex;
+            transition: 0.3s;
+            cursor: pointer;
+            height: 150px;
+            cursor: pointer;
+        }
+
+        .place-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .place-card img {
+            width: 50%;
+            object-fit: cover;
+        }
+
+        .place-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 50%;
+        }
+
+        .place-info h5 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .place-info span {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .property-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.15);
+            margin-bottom: 30px;
+            transition: 0.3s;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .property-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .property-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .property-info {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .property-info h5 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .property-info p {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .property-meta i {
+            color: #ff5a5f;
+            margin-right: 5px;
+        }
+
+        .property-meta span {
+            margin-right: 15px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .badge-top {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+
+        .badge-top .badge {
+            margin-right: 5px;
+        }
+
+        .why-choose-us h2 {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .choose-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            transition: 0.3s;
+            cursor: pointer;
+            height: 100%;
+        }
+
+        .choose-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .choose-icon {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            filter: brightness(0) saturate(100%) invert(38%) sepia(94%) saturate(3332%) hue-rotate(330deg) brightness(103%) contrast(103%);
+        }
+
+        .badge-custom {
+            top: 10px;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            color: white;
+        }
+
+        .badge-featured {
+            left: 10px;
+            background-color: crimson;
+        }
+
+        .badge-status {
+            right: 10px;
+            background-color: #555;
+        }
+
+        .property-img {
+            height: 200px;
+        }
+
+        .property-img img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cnt1 {
+            background-color: #e14d50;
+        }
+
+        .w-c-u-slider button {
+            width: 3rem !important;
+            height: 3rem !important;
+            border-radius: 50% !important;
+            background-color: white !important;
+            margin-bottom: 40px !important;
+        }
+
+        .w-c-u-slider button span {
+            font-size: 40px !important;
+            color: blue !important;
+            line-height: 1;
+        }
+
+        .cnt2 {
+            color: black !important;
+        }
+
+        .agent-card {
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .agent-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .agent-img {
+            height: 300px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .agent-info h5 {
+            font-size: 1rem;
+        }
+
+        .social-icons i {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 8px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+
+        .social-icons i:hover {
+            background-color: #e83e8c;
+        }
+
+        .testimonial-card {
+            position: relative;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            color: #333;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .border-pink {
+            border-color: #ff7fbf !important;
+        }
+
+        .quote-mark {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 50px;
+            color: #e7cfff;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-card img {
+            width: auto !important;
+        }
+
+        .c-t-slider button {
+            border-radius: 50% !important;
+            height: 2.5rem !important;
+            width: 2.5rem !important;
+            border: 2px solid grey !important;
+            margin-bottom: 40px !important;
+        }
+
+        .c-t-slider button span {
+            color: rgb(35, 15, 90) !important;
+            font-weight: 800 !important;
+            font-size: 22px !important;
+        }
+
+        .partners-section {
+            padding: 60px 20px;
+            background-color: #fff;
+        }
+
+        .partners-heading {
+            margin-bottom: 40px;
+        }
+
+        .partners-heading h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .partners-heading p {
+            font-size: 16px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .partners-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .partners-logos img {
+            /* max-height: 60px;
+  max-width: 120px; */
+            opacity: 0.6;
+            transition: all 0.3s ease;
+            filter: grayscale(100%);
+        }
+
+        .partners-logos img:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        .partners-logos img {
+            width: 190px !important;
+            margin: auto;
+        }
+
+        .testimonial-card {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.15);
+            margin: 0 10px 0 10px;
+        }
+
+        .footer {
+            background-color: #262b36;
+            color: #fff;
+            padding: 60px 40px 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer-column {
+            flex: 1 1 200px;
+            min-width: 220px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-logo img {
+            width: 40px;
+        }
+
+        .footer-logo h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .footer-contact li {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: #ff3c68;
+        }
+
+        .footer-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .footer-title::after {
+            content: "";
+            width: 30px;
+            height: 2px;
+            background: #ff3c68;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            font-size: 14px;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+            color: #ccc;
+            cursor: pointer;
+        }
+
+        .tweet {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .tweet i {
+            color: #ff3c68;
+            font-size: 16px;
+        }
+
+        .tweet-time {
+            color: #ff3c68;
+            font-weight: 600;
+        }
+
+        .subscribe-box {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .subscribe-box input {
+            padding: 10px;
+            flex: 1;
+            background: #3c414e;
+            border: none;
+            color: #fff;
+        }
+
+        .subscribe-box button {
+            background-color: #ff3c68;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #3c414e;
+            font-size: 14px;
+        }
+
+        .footer-socials i {
+            margin-left: 20px;
+            cursor: pointer;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="logo.jpg" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Listing</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Listing 1</a></li>
+                            <li><a class="dropdown-item" href="#">Listing 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">Property</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Property 1</a></li>
+                            <li><a class="dropdown-item" href="#">Property 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0 align-items-center">
+                    <!-- <li class="nav-item"><a class="nav-link poi" href="#" >Sign In</a></li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+                            data-bs-toggle="dropdown">
+                            <div class="profile-wrapper">
+                                <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" class="profile-img"
+                                    alt="User">
+                                <div class="profile-status"></div>
+                            </div>
+                            Hi, USER
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Log Out</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="add-listing-btn nav-link d-flex align-items-center">Add Listing <i
+                                class="fas fa-plus ms-2"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Find Your Dream House</h1>
+            <p>We have Over Million Properties Listed</p>
+        </div>
+        <!-- </section> -->
+        <!-- <section class="hero-section-1"> -->
+        <div class="search-tabs">
+            <div class="text-center">
+                <ul class="nav nav-pills justify-content-center mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-sale-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-sale" type="button" role="tab">For Sale</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-rent-tab" data-bs-toggle="pill" data-bs-target="#pills-rent"
+                            type="button" role="tab">For Rent</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-sale" role="tabpanel">
+                        <div class="row justify-content-center">
+                            <div class="col-md-3"><input type="text" class="form-control" placeholder="Sale Keyword">
+                            </div>
+                            <div class="col-md-3"><select class="form-select">
+                                    <option>Property Type</option>
+                                </select></div>
+                            <div class="col-md-3"><select class="form-select">
+                                    <option>Location</option>
+                                </select></div>
+                            <div class="col-md-3"><button class="btn btn-search w-100">Search Sale</button></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-rent" role="tabpanel">
+                        <div class="row justify-content-center">
+                            <div class="col-md-3"><input type="text" class="form-control" placeholder="Rent Keyword">
+                            </div>
+                            <div class="col-md-3"><select class="form-select">
+                                    <option>Property Type</option>
+                                </select></div>
+                            <div class="col-md-3"><select class="form-select">
+                                    <option>Location</option>
+                                </select></div>
+                            <div class="col-md-3"><button class="btn btn-search w-100">Search Rent</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Places -->
+    <section class="popular-places">
+        <div class="container">
+            <h2>Popular Places</h2>
+            <p>Properties In Most Popular Places.</p>
+            <div class="row g-4">
+                <div class="col-md-3 col-sm-6">
+                    <div class="place-card" data-aos="flip-left">
+                        <img
+                            src="https://images.unsplash.com/photo-1570304816841-906a17d7b067?fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmV3JTIweW9yayUyMHNreWxpbmV8ZW58MHx8MHx8fDA%3D&ixlib=rb-4.1.0&q=60&w=3000">
+                        <div class="place-info">
+                            <h5>New York</h5><span>203 Properties</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="place-card" data-aos="flip-left">
+                        <img
+                            src="https://www.tripsavvy.com/thmb/UfG0_2WB67pErEqfIQMvEjV4W20%3D/1500x0/filters%3Ano_upscale%28%29%3Amax_bytes%28150000%29%3Astrip_icc%28%29/GettyImages-947698310-1729da81e58f40058a9e45ba82532d57-2f992696318c42cbbd595ef3ec1043fd.jpg">
+                        <div class="place-info">
+                            <h5>Los Angeles</h5><span>307 Properties</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="place-card" data-aos="flip-left">
+                        <img
+                            src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/los-angeles-skyline-cityscape-at-dusk-chrishepburn.jpg">
+                        <div class="place-info">
+                            <h5>San Francisco</h5><span>409 Properties</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="place-card" data-aos="flip-left">
+                        <img src="https://code-theme.com/html/findhouses/images/popular-places/14.jpg">
+                        <div class="place-info">
+                            <h5>Atlanta</h5><span>409 Properties</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="place-card" data-aos="flip-left">
+                        <img src="https://code-theme.com/html/findhouses/images/popular-places/10.jpg">
+                        <div class="place-info">
+                            <h5>Miami</h5><span>145 Properties</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="place-card" data-aos="flip-left">
+                        <img src="https://code-theme.com/html/findhouses/images/popular-places/5.jpg">
+                        <div class="place-info">
+                            <h5>Chicago</h5><span>112 Properties</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" data-aos="flip-left">
+                    <div class="place-card" data-aos="flip-left">
+                        <img src="https://code-theme.com/html/findhouses/images/popular-places/6.jpg">
+                        <div class="place-info">
+                            <h5>Houston</h5><span>254 Properties</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" data-aos="flip-left">
+                    <div class="place-card" data-aos="flip-left">
+                        <img src="https://code-theme.com/html/findhouses/images/popular-places/13.jpg">
+                        <div class="place-info">
+                            <h5>Orlando</h5><span>254 Properties</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="featured-properties">
+        <div class="container">
+            <h2>Featured Properties</h2>
+            <p>These are our featured properties</p>
+            <div class="row">
+                <div class="col-md-4" data-aos="zoom-in-down">
+                    <div class="property-card">
+                        <div class="badge-top">
+                            <span class="badge bg-danger">Featured</span>
+                            <span class="badge bg-dark">For Sale</span>
+                        </div>
+                        <img src="https://code-theme.com/html/findhouses/images/blog/b-1.jpg">
+                        <div class="property-info">
+                            <h5>Luxury Villa</h5>
+                            <p>Central Park, NYC</p>
+                            <div class="property-meta">
+                                <span><i class="fas fa-bed"></i> 6</span>
+                                <span><i class="fas fa-bath"></i> 3</span>
+                                <span><i class="fas fa-expand"></i> 720 sqft</span>
+                                <span><i class="fas fa-car"></i> 2</span>
+                            </div>
+                            <span class="float-end fw-bold mt-2">$150,000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in-down">
+                    <div class="property-card">
+                        <div class="badge-top">
+                            <span class="badge bg-danger">Featured</span>
+                            <span class="badge bg-dark">For Sale</span>
+                        </div>
+                        <img src="https://code-theme.com/html/findhouses/images/blog/b-11.jpg">
+                        <div class="property-info">
+                            <h5>Luxury Villa</h5>
+                            <p>Central Park, NYC</p>
+                            <div class="property-meta">
+                                <span><i class="fas fa-bed"></i> 6</span>
+                                <span><i class="fas fa-bath"></i> 3</span>
+                                <span><i class="fas fa-expand"></i> 720 sqft</span>
+                                <span><i class="fas fa-car"></i> 2</span>
+                            </div>
+                            <span class="float-end fw-bold mt-2">$150,000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in-down">
+                    <div class="property-card">
+                        <div class="badge-top">
+                            <span class="badge bg-danger">Featured</span>
+                            <span class="badge bg-dark">For Sale</span>
+                        </div>
+                        <img src="https://code-theme.com/html/findhouses/images/feature-properties/fp-12.jpg">
+                        <div class="property-info">
+                            <h5>Luxury Villa</h5>
+                            <p>Central Park, NYC</p>
+                            <div class="property-meta">
+                                <span><i class="fas fa-bed"></i> 6</span>
+                                <span><i class="fas fa-bath"></i> 3</span>
+                                <span><i class="fas fa-expand"></i> 720 sqft</span>
+                                <span><i class="fas fa-car"></i> 2</span>
+                            </div>
+                            <span class="float-end fw-bold mt-2">$150,000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in-down">
+                    <div class="property-card">
+                        <div class="badge-top">
+                            <span class="badge bg-danger">Featured</span>
+                            <span class="badge bg-dark">For Sale</span>
+                        </div>
+                        <img src="https://code-theme.com/html/findhouses/images/feature-properties/fp-11.jpg">
+                        <div class="property-info">
+                            <h5>Luxury Villa</h5>
+                            <p>Central Park, NYC</p>
+                            <div class="property-meta">
+                                <span><i class="fas fa-bed"></i> 6</span>
+                                <span><i class="fas fa-bath"></i> 3</span>
+                                <span><i class="fas fa-expand"></i> 720 sqft</span>
+                                <span><i class="fas fa-car"></i> 2</span>
+                            </div>
+                            <span class="float-end fw-bold mt-2">$150,000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in-down">
+                    <div class="property-card">
+                        <div class="badge-top">
+                            <span class="badge bg-danger">Featured</span>
+                            <span class="badge bg-dark">For Sale</span>
+                        </div>
+                        <img src="https://code-theme.com/html/findhouses/images/feature-properties/fp-10.jpg">
+                        <div class="property-info">
+                            <h5>Luxury Villa</h5>
+                            <p>Central Park, NYC</p>
+                            <div class="property-meta">
+                                <span><i class="fas fa-bed"></i> 6</span>
+                                <span><i class="fas fa-bath"></i> 3</span>
+                                <span><i class="fas fa-expand"></i> 720 sqft</span>
+                                <span><i class="fas fa-car"></i> 2</span>
+                            </div>
+                            <span class="float-end fw-bold mt-2">$150,000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in-down">
+                    <div class="property-card">
+                        <div class="badge-top">
+                            <span class="badge bg-danger">Featured</span>
+                            <span class="badge bg-dark">For Sale</span>
+                        </div>
+                        <img src="https://code-theme.com/html/findhouses/images/blog/b-12.jpg">
+                        <div class="property-info">
+                            <h5>Luxury Villa</h5>
+                            <p>Central Park, NYC</p>
+                            <div class="property-meta">
+                                <span><i class="fas fa-bed"></i> 6</span>
+                                <span><i class="fas fa-bath"></i> 3</span>
+                                <span><i class="fas fa-expand"></i> 720 sqft</span>
+                                <span><i class="fas fa-car"></i> 2</span>
+                            </div>
+                            <span class="float-end fw-bold mt-2">$150,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <button class="btn btn-danger mt-4 mb-4">View More</button>
+        </div>
+    </section>
+    <section class="why-choose-us py-5">
+        <div class="container text-center">
+            <h2 class="mb-3">Why <strong>Choose Us</strong></h2>
+            <p class="mb-5 text-muted">We provide full service at every step.</p>
+
+            <!-- <div class="w-c-u-slider">
+            <div class="owl-carousel owl-theme">
+                <div class="item"><h4>1</h4></div>
+                <div class="item"><h4>2</h4></div>
+                <div class="item"><h4>3</h4></div>
+                <div class="item"><h4>4</h4></div>
+                <div class="item"><h4>5</h4></div>
+                <div class="item"><h4>6</h4></div>
+                <div class="item"><h4>7</h4></div>
+                <div class="item"><h4>8</h4></div>
+                <div class="item"><h4>9</h4></div>
+                <div class="item"><h4>10</h4></div>
+                <div class="item"><h4>11</h4></div>
+                <div class="item"><h4>12</h4></div>
+            </div>
+        </div> -->
+
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="choose-card p-4">
+                        <img src="Property.jpg" alt="Properties" class="choose-icon mb-3">
+                        <h5 class="fw-bold mb-2">Wide Range Of Properties</h5>
+                        <p class="text-muted small">
+                            Lorem ipsum dolor sit amet, consectetur pro adipisici consectetur debits adipisicing lacus
+                            consectetur Business Directory.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="choose-card p-4">
+                        <img src="Trust.jpg" alt="Trusted" class="choose-icon mb-3">
+                        <h5 class="fw-bold mb-2">Trusted by thousands</h5>
+                        <p class="text-muted small">
+                            Lorem ipsum dolor sit amet, consectetur pro adipisici consectetur debits adipisicing lacus
+                            consectetur Business Directory.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="choose-card p-4">
+                        <img src="Finance.jpg" alt="Financing" class="choose-icon mb-3">
+                        <h5 class="fw-bold mb-2">Financing made easy</h5>
+                        <p class="text-muted small">
+                            Lorem ipsum dolor sit amet, consectetur pro adipisici consectetur debits adipisicing lacus
+                            consectetur Business Directory.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="choose-card p-4">
+                        <img src="https://cdn-icons-png.flaticon.com/512/484/484167.png" alt="Support"
+                            class="choose-icon mb-3">
+                        <h5 class="fw-bold mb-2">We are here near you</h5>
+                        <p class="text-muted small">
+                            Lorem ipsum dolor sit amet, consectetur pro adipisici consectetur debits adipisicing lacus
+                            consectetur Business Directory.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <div class="cnt1">
+        <section class="section-title text-center text-white py-4 mt-4">
+            <h2>Discover Popular Properties</h2>
+            <p>We provide full service at every step.</p>
+        </section>
+        <div class="w-c-u-slider">
+            <div class="owl-carousel abcd owl-theme">
+                <div class="item">
+                    <div class="property-card position-relative bg-white rounded shadow-lg overflow-hidden">
+                        <div class="property-img position-relative">
+                            <img src="https://code-theme.com/html/findhouses/images/blog/b-11.jpg" class="w-100"
+                                alt="Property 1">
+                            <span class="badge-custom badge-featured position-absolute">Featured</span>
+                            <span class="badge-custom badge-status position-absolute">For Sale</span>
+                        </div>
+                        <div class="p-3">
+                            <h6 class="fw-bold mb-1">Real House Luxury Villa</h6>
+                            <p class="text-muted small mb-2">Est St, 77 - Central Park South, NYC</p>
+                            <div class="features mb-2 text-muted small">
+                                <span>🏠 6 Bedrooms</span>
+                                <span>🛀 3 Bathrooms</span><br>
+                                <span>📏 720 sq ft</span>
+                                <span>🚗 2 Garages</span>
+                            </div>
+                        </div>
+                        <div class="price-share border-top px-3 py-2 d-flex justify-content-between">
+                            <span>$350,000</span>
+                            <span>↗️ 🔗 🤍</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="property-card position-relative bg-white rounded shadow-lg overflow-hidden">
+                        <div class="property-img position-relative">
+                            <img src="https://code-theme.com/html/findhouses/images/blog/b-11.jpg" class="w-100"
+                                alt="Property 1">
+                            <span class="badge-custom badge-featured position-absolute">Featured</span>
+                            <span class="badge-custom badge-status position-absolute">For Sale</span>
+                        </div>
+                        <div class="p-3">
+                            <h6 class="fw-bold mb-1">Real House Luxury Villa</h6>
+                            <p class="text-muted small mb-2">Est St, 77 - Central Park South, NYC</p>
+                            <div class="features mb-2 text-muted small">
+                                <span>🏠 6 Bedrooms</span>
+                                <span>🛀 3 Bathrooms</span><br>
+                                <span>📏 720 sq ft</span>
+                                <span>🚗 2 Garages</span>
+                            </div>
+                        </div>
+                        <div class="price-share border-top px-3 py-2 d-flex justify-content-between">
+                            <span>$350,000</span>
+                            <span>↗️ 🔗 🤍</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="property-card position-relative bg-white rounded shadow-lg overflow-hidden">
+                        <div class="property-img position-relative">
+                            <img src="https://code-theme.com/html/findhouses/images/blog/b-12.jpg" class="w-100"
+                                alt="Property 2">
+                            <span class="badge-custom badge-featured position-absolute">Featured</span>
+                            <span class="badge-custom badge-status position-absolute">For Rent</span>
+                        </div>
+                        <div class="p-3">
+                            <h6 class="fw-bold mb-1">Real House Luxury Villa</h6>
+                            <p class="text-muted small mb-2">Est St, 77 - Central Park South, NYC</p>
+                            <div class="features mb-2 text-muted small">
+                                <span>🏠 6 Bedrooms</span>
+                                <span>🛀 3 Bathrooms</span><br>
+                                <span>📏 720 sq ft</span>
+                                <span>🚗 2 Garages</span>
+                            </div>
+                        </div>
+                        <div class="price-share border-top px-3 py-2 d-flex justify-content-between">
+                            <span>$150,000</span>
+                            <span>↗️ 🔗 🤍</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="property-card position-relative bg-white rounded shadow-lg overflow-hidden">
+                        <div class="property-img position-relative">
+                            <img src="https://code-theme.com/html/findhouses/images/blog/b-1.jpg" class="w-100"
+                                alt="Property 3">
+                            <span class="badge-custom badge-featured position-absolute">Featured</span>
+                            <span class="badge-custom badge-status position-absolute">For Rent</span>
+                        </div>
+                        <div class="p-3">
+                            <h6 class="fw-bold mb-1">Real House Luxury Villa</h6>
+                            <p class="text-muted small mb-2">Est St, 77 - Central Park South, NYC</p>
+                            <div class="features mb-2 text-muted small">
+                                <span>🏠 6 Bedrooms</span>
+                                <span>🛀 3 Bathrooms</span><br>
+                                <span>📏 720 sq ft</span>
+                                <span>🚗 2 Garages</span>
+                            </div>
+                        </div>
+                        <div class="price-share border-top px-3 py-2 d-flex justify-content-between">
+                            <span>$350,000</span>
+                            <span>↗️ 🔗 🤍</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="property-card position-relative bg-white rounded shadow-lg overflow-hidden">
+                        <div class="property-img position-relative">
+                            <img src="https://code-theme.com/html/findhouses/images/blog/b-11.jpg" class="w-100"
+                                alt="Property 4">
+                            <span class="badge-custom badge-featured position-absolute">Featured</span>
+                            <span class="badge-custom badge-status position-absolute">For Sale</span>
+                        </div>
+                        <div class="p-3">
+                            <h6 class="fw-bold mb-1">Real House Luxury Villa</h6>
+                            <p class="text-muted small mb-2">Est St, 77 - Central Park South, NYC</p>
+                            <div class="features mb-2 text-muted small">
+                                <span>🏠 6 Bedrooms</span>
+                                <span>🛀 3 Bathrooms</span><br>
+                                <span>📏 720 sq ft</span>
+                                <span>🚗 2 Garages</span>
+                            </div>
+                            <div class="price-share border-top px-3 py-2 d-flex justify-content-between">
+                                <span>$150,000</span>
+                                <span>↗️ 🔗 🤍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="item"><h4>6</h4></div>
+                <div class="item"><h4>7</h4></div>
+                <div class="item"><h4>8</h4></div>
+                <div class="item"><h4>9</h4></div>
+                <div class="item"><h4>10</h4></div>
+                <div class="item"><h4>11</h4></div>
+                <div class="item"><h4>12</h4></div> -->
+                </div>
+                <div class="item">
+                    <div class="property-card position-relative bg-white rounded shadow-lg overflow-hidden">
+                        <div class="property-img position-relative">
+                            <img src="https://code-theme.com/html/findhouses/images/feature-properties/fp-12.jpg"
+                                class="w-100" alt="Property 4">
+                            <span class="badge-custom badge-featured position-absolute">Featured</span>
+                            <span class="badge-custom badge-status position-absolute">For Sale</span>
+                        </div>
+                        <div class="p-3">
+                            <h6 class="fw-bold mb-1">Real House Luxury Villa</h6>
+                            <p class="text-muted small mb-2">Est St, 77 - Central Park South, NYC</p>
+                            <div class="features mb-2 text-muted small">
+                                <span>🏠 6 Bedrooms</span>
+                                <span>🛀 3 Bathrooms</span><br>
+                                <span>📏 720 sq ft</span>
+                                <span>🚗 2 Garages</span>
+                            </div>
+                            <div class="price-share border-top px-3 py-2 d-flex justify-content-between">
+                                <span>$150,000</span>
+                                <span>↗️ 🔗 🤍</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="team-section text-center py-5 mt-4">
+        <h2 class="fw-bold">Meet Our <span class="text-dark">Agents</span></h2>
+        <p class="text-muted mb-5">Our Agents are here to help you</p>
+        <div class="container">
+            <div class="row justify-content-center g-4">
+
+                <!-- Agent Card -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="agent-card position-relative" data-aos="zoom-in-right">
+                        <img src="https://code-theme.com/html/findhouses/images/team/t-5.jpg" alt="Agent 1"
+                            class="img-fluid agent-img">
+                        <div class="social-icons position-absolute top-0 end-0 d-flex flex-column p-2">
+                            <a href="#" class="text-white mb-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-white mb-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-white mb-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <div class="agent-info py-3">
+                            <h5 class="mb-1 fw-bold">Carls Jhons</h5>
+                            <p class="text-muted mb-0">Real Estate Agent</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repeat for other agents -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="agent-card position-relative" data-aos="zoom-in-down">
+                        <img src="https://code-theme.com/html/findhouses/images/team/t-8.jpg" alt="Agent 2"
+                            class="img-fluid agent-img">
+                        <div class="social-icons position-absolute top-0 end-0 d-flex flex-column p-2">
+                            <a href="#" class="text-white mb-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-white mb-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-white mb-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <div class="agent-info py-3">
+                            <h5 class="mb-1 fw-bold">Arling Tracy</h5>
+                            <p class="text-muted mb-0">Real Estate Agent</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="agent-card position-relative" data-aos="zoom-in-up">
+                        <img src="https://code-theme.com/html/findhouses/images/team/team-image-2.jpg" alt="Agent 3"
+                            class="img-fluid agent-img">
+                        <div class="social-icons position-absolute top-0 end-0 d-flex flex-column p-2">
+                            <a href="#" class="text-white mb-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-white mb-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-white mb-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <div class="agent-info py-3">
+                            <h5 class="mb-1 fw-bold">Mark Web</h5>
+                            <p class="text-muted mb-0">Real Estate Agent</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="agent-card position-relative" data-aos="zoom-in">
+                        <img src="https://code-theme.com/html/findhouses/images/team/t-6.jpg" alt="Agent 4"
+                            class="img-fluid agent-img">
+                        <div class="social-icons position-absolute top-0 end-0 d-flex flex-column p-2">
+                            <a href="#" class="text-white mb-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-white mb-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-white mb-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <div class="agent-info py-3">
+                            <h5 class="mb-1 fw-bold">Katy Grace</h5>
+                            <p class="text-muted mb-0">Real Estate Agent</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="agent-card position-relative" data-aos="zoom-out-up">
+                        <img src="https://code-theme.com/html/findhouses/images/team/t-7.jpg" alt="Agent 5"
+                            class="img-fluid agent-img">
+                        <div class="social-icons position-absolute top-0 end-0 d-flex flex-column p-2">
+                            <a href="#" class="text-white mb-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-white mb-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-white mb-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <div class="agent-info py-3">
+                            <h5 class="mb-1 fw-bold">Chris Melo</h5>
+                            <p class="text-muted mb-0">Real Estate Agent</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="agent-card position-relative" data-aos="zoom-out-down">
+                        <img src="https://code-theme.com/html/findhouses/images/team/t-8.jpg" alt="Agent 6"
+                            class="img-fluid agent-img">
+                        <div class="social-icons position-absolute top-0 end-0 d-flex flex-column p-2">
+                            <a href="#" class="text-white mb-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-white mb-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-white mb-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <div class="agent-info py-3">
+                            <h5 class="mb-1 fw-bold">Nina Thomas</h5>
+                            <p class="text-muted mb-0">Real Estate Agent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container my-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Clients Testimonials</h2>
+            <p class="text-muted">We collect reviews from our customers.</p>
+        </div>
+
+        <div class="c-t-slider">
+            <div class="owl-carousel efgh owl-theme">
+
+
+                <div class="item">
+                    <div class="testimonial-card p-4 h-100">
+                        <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore gna a. Ut enim adminim veniam,</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <img src="https://code-theme.com/html/findhouses/images/testimonials/ts-1.jpg"
+                                class="rounded-circle border border-2 border-pink me-3" width="60" height="60" />
+                            <div>
+                                <h6 class="mb-0">Mary Deshaw</h6>
+                                <small class="text-muted">Chicago</small>
+                            </div>
+                        </div>
+                        <div class="quote-mark">❞</div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="testimonial-card p-4 h-100">
+                        <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore gna a. Ut enim adminim veniam,</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <img src="https://code-theme.com/html/findhouses/images/testimonials/ts-2.jpg"
+                                class="rounded-circle border border-2 border-pink me-3" width="60" height="60" />
+                            <div>
+                                <h6 class="mb-0">Jhon Morris</h6>
+                                <small class="text-muted">Los Angeles</small>
+                            </div>
+                        </div>
+                        <div class="quote-mark">❞</div>
+                    </div>
+                </div>
+
+
+                <div class="item">
+                    <div class="testimonial-card p-4 h-100">
+                        <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore gna a. Ut enim adminim veniam,</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <img src="https://code-theme.com/html/findhouses/images/testimonials/ts-3.jpg"
+                                class="rounded-circle border border-2 border-pink me-3" width="60" height="60" />
+                            <div>
+                                <h6 class="mb-0">Lisa Smith</h6>
+                                <small class="text-muted">New York</small>
+                            </div>
+                        </div>
+                        <div class="quote-mark">❞</div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="testimonial-card p-4 h-100">
+                        <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore gna a. Ut enim adminim veniam,</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <img src="https://code-theme.com/html/findhouses/images/testimonials/ts-2.jpg"
+                                class="rounded-circle border border-2 border-pink me-3" width="60" height="60" />
+                            <div>
+                                <h6 class="mb-0">Jhon Morris</h6>
+                                <small class="text-muted">Los Angeles</small>
+                            </div>
+                        </div>
+                        <div class="quote-mark">❞</div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="testimonial-card p-4 h-100">
+                        <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore gna a. Ut enim adminim veniam,</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <img src="https://code-theme.com/html/findhouses/images/testimonials/ts-1.jpg"
+                                class="rounded-circle border border-2 border-pink me-3" width="60" height="60" />
+                            <div>
+                                <h6 class="mb-0">Mary Deshaw</h6>
+                                <small class="text-muted">Chicago</small>
+                            </div>
+                        </div>
+                        <div class="quote-mark">❞</div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="testimonial-card p-4 h-100">
+                        <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore gna a. Ut enim adminim veniam,</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <img src="https://code-theme.com/html/findhouses/images/testimonials/ts-3.jpg"
+                                class="rounded-circle border border-2 border-pink me-3" width="60" height="60" />
+                            <div>
+                                <h6 class="mb-0">Lisa Smith</h6>
+                                <small class="text-muted">New York</small>
+                            </div>
+                        </div>
+                        <div class="quote-mark">❞</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="partners-section">
+        <div class="partners-heading text-center">
+            <h2>Our Partners</h2>
+            <p>The Companies That Represent Us.</p>
+        </div>
+        <div class="partners-logos">
+            <div class="owl-carousel wxyz owl-theme text-center">
+                <div class="item">
+                    <img src="https://code-theme.com/html/findhouses/images/partners/11.jpg" alt="Nevada">
+                </div>
+                <div class="item">
+                    <img src="https://code-theme.com/html/findhouses/images/partners/12.jpg" alt="Mark & Co.">
+                </div>
+                <div class="item">
+                    <img src="https://code-theme.com/html/findhouses/images/partners/17.jpg" alt="Smith & Robert">
+                </div>
+                <div class="item">
+                    <img src="https://code-theme.com/html/findhouses/images/partners/13.jpg" alt="Hillstrom">
+                </div>
+                <div class="item">
+                    <img src="https://code-theme.com/html/findhouses/images/partners/15.jpg" alt="Home Real Estate">
+                </div>
+                <div class="item">
+                    <img src="https://code-theme.com/html/findhouses/images/partners/16.jpg" alt="New Age Housing">
+                </div>
+                <div class="item">
+                    <img src="https://code-theme.com/html/findhouses/images/partners/14.jpg" alt="Seaside Condominiums">
+                </div>
+            </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Column 1: Logo and Address -->
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="logo.jpg" alt="Find Houses" />
+                    <h3>Find Houses</h3>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum incidunt architecto soluta laboriosam,
+                    perspiciatis, aspernatur officiis esse.</p>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i> 95 South Park Avenue, USA</li>
+                    <li><i class="fas fa-phone-alt"></i> +456 875 369 208</li>
+                    <li><i class="fas fa-envelope"></i> support@findhouses.com</li>
+                </ul>
+            </div>
+
+            <!-- Column 2: Navigation -->
+            <div class="footer-column">
+                <h4 class="footer-title">Navigation</h4>
+                <div class="footer-links">
+                    <ul>
+                        <li>Home One</li>
+                        <li>Properties Right</li>
+                        <li>Properties List</li>
+                        <li>Property Details</li>
+                        <li>Agents Listing</li>
+                    </ul>
+                    <ul>
+                        <li>Agents Details</li>
+                        <li>About Us</li>
+                        <li>Blog Default</li>
+                        <li>Blog Details</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Column 3: Twitter Feeds -->
+            <div class="footer-column">
+                <h4 class="footer-title">Twitter Feeds</h4>
+                <div class="tweet">
+                    <i class="fab fa-twitter"></i>
+                    <p><span>@Findhouses</span> All Share Them With Me Baby Said Inspet.<br><span
+                            class="tweet-time">about 5 days ago</span></p>
+                </div>
+                <div class="tweet">
+                    <i class="fab fa-twitter"></i>
+                    <p><span>@Findhouses</span> All Share Them With Me Baby Said Inspet.<br><span
+                            class="tweet-time">about 5 days ago</span></p>
+                </div>
+                <div class="tweet">
+                    <i class="fab fa-twitter"></i>
+                    <p><span>@Findhouses</span> All Share Them With Me Baby Said Inspet.<br><span
+                            class="tweet-time">about 5 days ago</span></p>
+                </div>
+            </div>
+
+            <!-- Column 4: Newsletter -->
+            <div class="footer-column">
+                <h4 class="footer-title">Newsletters</h4>
+                <p>Sign Up for Our Newsletter to get Latest Updates and Offers. Subscribe to receive news in your inbox.
+                </p>
+                <div class="subscribe-box">
+                    <input type="email" placeholder="Enter Your Email" />
+                    <button>SUBSCRIBE</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>2021 © Copyright - All Rights Reserved.</p>
+            <div class="footer-socials">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fas fa-angle-up"></i>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
+        integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"
+        integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // Navbar color change on scroll
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            (window.scrollY > 400) ? navbar.classList.add('scrolled') : navbar.classList.remove('scrolled');
+        });
+    </script>
+    <script>
+        AOS.init({
+            duration: 1000,     // Animation duration in ms
+            once: false,        // Animate always on scroll
+            delay: 100         // Delay before animation starts
+        });
+    </script>
+    <script>
+        $('.abcd').owlCarousel({
+            loop: false,
+            margin: 10,
+            nav: true,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 4
+                }
+            }
+        })
+    </script>
+
+    <script>
+        $('.efgh').owlCarousel({
+            loop: false,
+            margin: 10,
+            nav: true,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 4
+                }
+            }
+        })
+    </script>
+    <script>
+        $('.wxyz').owlCarousel({
+            loop: true,
+            nav: false,
+            dots: false,
+            autoplay: true,
+            autoplayTimeout: 1000,
+            autoplayHoverPause: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 4
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
